@@ -40,11 +40,11 @@ app.use(express.urlencoded({extended: true}))
 const allowedOrigins = [
   'http://localhost:5177',
   'http://localhost:5175',
-  'https://boringcompmay-front.vercel.app'
-  // 'https://global-tracking-seven.vercel.app',
-  // 'https://www.globalshipping.online',
-  // 'https://globalshipping.online',
-  // 'https://tracking-user.vercel.app'
+  'https://boringcompmay-front.vercel.app',
+  'https://boringcompmay-front.vercel.app',
+  'https://boringcompany.vip',
+  'https://www.boringcompany.vip',
+
 
 ];
 
