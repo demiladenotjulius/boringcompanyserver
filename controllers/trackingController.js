@@ -281,13 +281,13 @@ const createEmailTemplate = (type, data) => {
   };
 
   const statusColors = {
-    Ordered: "#3b82f6",
-    Processing: "#f59e0b",
-    "Ready to Ship": "#8b5cf6",
-    Shipped: "#06b6d4",
-    "Out for Delivery": "#10b981",
-    Delivered: "#22c55e",
-    Cancelled: "#ef4444",
+    Ordered: "#10b981", // green-500
+    Processing: "#f59e0b", // amber-500
+    "Ready to Ship": "#10b981", // green-500
+    Shipped: "#06b6d4", // cyan-500
+    "Out for Delivery": "#10b981", // green-500
+    Delivered: "#22c55e", // green-600
+    Cancelled: "#ef4444", // red-500
   };
 
   const getStatusIcon = (status) => {
@@ -320,17 +320,18 @@ const createEmailTemplate = (type, data) => {
             <!-- Main Container -->
             <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
               
-              <!-- Header with Gradient -->
+              <!-- Header with Green Gradient -->
               <tr>
-                <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
-                  <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                    BoringComapny 
-                  </h1>
-                  <p style="margin: 10px 0 0 0; color: #e0e7ff; font-size: 14px;">
-                    Tracking & Delivery Service
-                  </p>
-                </td>
-              </tr>
+  <td style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 40px 30px; text-align: center;">
+    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
+      boringCompany
+    </h1>
+    <p style="margin: 10px 0 0 0; color: #d1fae5; font-size: 14px;">
+      Tracking & Delivery Service
+    </p>
+  </td>
+</tr>
+
 
               <!-- Status Badge -->
               <tr>
@@ -355,7 +356,7 @@ const createEmailTemplate = (type, data) => {
                         : "Order Status Update"
                     }
                   </h2>
-<p style="margin: 0; color: #000000; font-size: 16px; line-height: 1.6; text-align: center;">
+                  <p style="margin: 0; color: #000000; font-size: 16px; line-height: 1.6; text-align: center;">
                     Hi <strong>${
                       tracking?.customerInfo?.name || "Customer"
                     }</strong>,
@@ -369,10 +370,10 @@ const createEmailTemplate = (type, data) => {
               <!-- Order Details Card -->
               <tr>
                 <td style="padding: 0 30px 30px 30px;">
-                  <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); border-radius: 12px; overflow: hidden;">
+                  <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; overflow: hidden;">
                     <tr>
                       <td style="padding: 25px;">
-                        <h3 style="margin: 0 0 20px 0; color: #374151; font-size: 18px; font-weight: 600; border-bottom: 2px solid #d1d5db; padding-bottom: 10px;">
+                        <h3 style="margin: 0 0 20px 0; color: #065f46; font-size: 18px; font-weight: 600; border-bottom: 2px solid #10b981; padding-bottom: 10px;">
                           📋 Order Details
                         </h3>
                         
@@ -415,7 +416,7 @@ const createEmailTemplate = (type, data) => {
                               ? `
                           <tr>
                             <td colspan="2" style="padding-top: 15px;">
-                              <div style="background-color: #fff; padding: 12px; border-radius: 6px; border-left: 3px solid #667eea;">
+                              <div style="background-color: #fff; padding: 12px; border-radius: 6px; border-left: 3px solid #10b981;">
                                 <strong style="color: #374151; font-size: 13px;">Note:</strong>
                                 <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 13px; line-height: 1.5;">${notes}</p>
                               </div>
@@ -437,7 +438,7 @@ const createEmailTemplate = (type, data) => {
                   <a href="${process.env.FRONTEND_URL}/tracking/${
     tracking?.trackingNumber || trackingNumber
   }" 
-                     style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); transition: all 0.3s;">
+                     style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); transition: all 0.3s;">
                     🔍 Track Your Order
                   </a>
                   <p style="margin: 15px 0 0 0; color: #9ca3af; font-size: 13px;">
@@ -458,15 +459,15 @@ const createEmailTemplate = (type, data) => {
               <!-- Footer -->
               <tr>
                 <td style="padding: 30px; text-align: center;">
-                  <p style="margin: 0 0 10px 0; color: #374151; font-size: 16px; font-weight: 600;">
-                    Thank you for choosing BoringComapny ! 🙏
-                  </p>
+                 <p style="margin: 0 0 10px 0; color: #374151; font-size: 16px; font-weight: 600;">
+  Thank you for choosing boringCompany!
+</p>
                   <p style="margin: 0; color: #9ca3af; font-size: 13px; line-height: 1.6;">
                     If you have any questions, please don't hesitate to contact our support team.
                   </p>
                   <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
                     <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-                      © ${new Date().getFullYear()} BoringComapny . All rights reserved.
+                      © ${new Date().getFullYear()} boringCompany. All rights reserved.
                     </p>
                   </div>
                 </td>
@@ -1152,30 +1153,28 @@ export const sendCustomEmail = async (req, res) => {
                 <!-- Order Reference -->
                 <tr>
                   <td style="padding: 0 30px 30px 30px;">
-                    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px;">
-                      <tr>
-                        <td style="padding: 15px 20px;">
-                          <p style="margin: 0; color: #92400e; font-size: 13px; font-weight: 500;">
-                            <strong>Related Order:</strong> ${trackingNumber}
-                          </p>
-                          <p style="margin: 5px 0 0 0; color: #92400e; font-size: 13px;">
-                            Product: ${tracking.productName}
-                          </p>
-                        </td>
-                      </tr>
-                    </table>
+                    <<table width="100%" cellpadding="0" cellspacing="0" style="background-color: #d1fae5; border-left: 4px solid #10b981; border-radius: 8px;">
+  <tr>
+    <td style="padding: 15px 20px;">
+      <p style="margin: 0; color: #065f46; font-size: 13px; font-weight: 500;">
+        <strong>Related Order:</strong> ${trackingNumber}
+      </p>
+      <p style="margin: 5px 0 0 0; color: #065f46; font-size: 13px;">
+        Product: ${tracking.productName}
+      </p>
+    </td>
+  </tr>
+</table>
                   </td>
                 </tr>
 
                 <!-- Track Order Button -->
                 <tr>
                   <td style="padding: 0 30px 40px 30px; text-align: center;">
-                    <a href="${
-                      process.env.FRONTEND_URL
-                    }/tracking/${trackingNumber}" 
-                       style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);">
-                      Track Your Order
-                    </a>
+                   <a href="${process.env.FRONTEND_URL}/tracking/${trackingNumber}" 
+   style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);">
+  Track Your Order
+</a>
                     <p style="margin: 15px 0 0 0; color: #9ca3af; font-size: 13px;">
                       Or copy this link: ${
                         process.env.FRONTEND_URL
@@ -1242,7 +1241,6 @@ export const sendCustomEmail = async (req, res) => {
   }
 };
 
-
 // Contact form submission (public)
 export const submitContactForm = async (req, res) => {
   try {
@@ -1280,37 +1278,37 @@ export const submitContactForm = async (req, res) => {
       <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f7f7f7;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
           
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-align: center; padding: 20px;">
-            <h1 style="margin: 0; font-size: 24px; font-weight: bold;">New Message from ${name}</h1>
-            <p style="margin: 5px 0; font-size: 18px; font-weight: bold;">${email}</p>
-            <p style="margin: 5px 0; font-size: 14px;">Contact Form Submission</p>
-          </div>
+   <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-align: center; padding: 20px;">
+  <h1 style="margin: 0; font-size: 24px; font-weight: bold;">New Message from ${name}</h1>
+  <p style="margin: 5px 0; font-size: 18px; font-weight: bold;">${email}</p>
+  <p style="margin: 5px 0; font-size: 14px;">Contact Form Submission</p>
+</div>
           
           <div style="padding: 20px;">
-            <div style="background-color: #e6f3ff; border-left: 4px solid #667eea; padding: 15px; margin-bottom: 20px;">
-              <p style="margin: 0; font-size: 16px; font-weight: bold; color: #667eea;">
-                Click "Reply" to respond directly to ${name} at ${email}
-              </p>
-            </div>
+           <div style="background-color: #d1fae5; border-left: 4px solid #10b981; padding: 15px; margin-bottom: 20px;">
+  <p style="margin: 0; font-size: 16px; font-weight: bold; color: #10b981;">
+    Click "Reply" to respond directly to ${name} at ${email}
+  </p>
+</div>
             
             <h2 style="font-size: 20px; color: #667eea; margin-bottom: 16px;">Contact Details</h2>
             
-            <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 16px; border: 2px solid #667eea;">
-              <h3 style="margin: 0 0 15px 0; color: #667eea; font-size: 18px;">Customer Information:</h3>
-              <p style="margin: 8px 0; font-size: 16px;"><strong>Name:</strong> ${name}</p>
-              <p style="margin: 8px 0; font-size: 16px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #667eea; text-decoration: none; font-weight: bold;">${email}</a></p>
-              <p style="margin: 8px 0; font-size: 16px;"><strong>Subject:</strong> ${subject}</p>
-            </div>
+          <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 16px; border: 2px solid #10b981;">
+  <h3 style="margin: 0 0 15px 0; color: #10b981; font-size: 18px;">Customer Information:</h3>
+  <p style="margin: 8px 0; font-size: 16px;"><strong>Name:</strong> ${name}</p>
+  <p style="margin: 8px 0; font-size: 16px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #10b981; text-decoration: none; font-weight: bold;">${email}</a></p>
+  <p style="margin: 8px 0; font-size: 16px;"><strong>Subject:</strong> ${subject}</p>
+</div>
             
             <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 16px;">
               <h3 style="margin: 0 0 10px 0; color: #333;">Message:</h3>
-              <div style="background-color: white; padding: 15px; border-radius: 6px; border-left: 4px solid #667eea;">
+              <div style="background-color: white; padding: 15px; border-radius: 6px; border-left: 4px solid #10b981;">
                 <p style="margin: 0; white-space: pre-wrap; font-size: 15px; line-height: 1.6; color: #000000;">${message}</p>
               </div>
             </div>
             
             <div style="text-align: center; margin: 20px 0;">
-              <a href="mailto:${email}?subject=Re: ${subject}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px; font-weight: bold;">
+<a href="mailto:${email}?subject=Re: ${subject}" style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px; font-weight: bold;">
                 Reply to ${name}
               </a>
             </div>
@@ -1350,10 +1348,10 @@ export const submitContactForm = async (req, res) => {
       </head>
       <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f7f7f7;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-align: center; padding: 20px;">
-            <h1 style="margin: 0; font-size: 24px; font-weight: bold;">BoringComapny </h1>
-            <p style="margin: 5px 0; font-size: 14px;">Message Received</p>
-          </div>
+         <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-align: center; padding: 20px;">
+  <h1 style="margin: 0; font-size: 24px; font-weight: bold;">boringCompany</h1>
+  <p style="margin: 5px 0; font-size: 14px;">Message Received</p>
+</div>
           <div style="padding: 20px;">
             <h2 style="font-size: 20px; color: #667eea; margin-bottom: 16px;">Thank You for Contacting Us</h2>
             
@@ -1363,8 +1361,8 @@ export const submitContactForm = async (req, res) => {
               We have received your message and will respond within 24 hours during business days.
             </p>
             
-            <div style="background-color: #f0f9ff; border: 1px solid #667eea; padding: 15px; border-radius: 8px; margin-bottom: 16px;">
-              <h3 style="margin: 0 0 10px 0; color: #667eea;">Your Message Summary:</h3>
+         <div style="background-color: #d1fae5; border: 1px solid #10b981; padding: 15px; border-radius: 8px; margin-bottom: 16px;">
+  <h3 style="margin: 0 0 10px 0; color: #10b981;">Your Message Summary:</h3>
               <p style="margin: 5px 0; color: #000000;"><strong>Subject:</strong> ${subject}</p>
               <p style="margin: 5px 0; color: #000000;"><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
             </div>

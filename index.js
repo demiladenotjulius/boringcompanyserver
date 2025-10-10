@@ -39,7 +39,8 @@ app.use(express.urlencoded({extended: true}))
 // cors config
 const allowedOrigins = [
   'http://localhost:5177',
-  'http://localhost:5175'
+  'http://localhost:5175',
+  'https://boringcompmay-front.vercel.app'
   // 'https://global-tracking-seven.vercel.app',
   // 'https://www.globalshipping.online',
   // 'https://globalshipping.online',
